@@ -1,6 +1,7 @@
 package com.christianoabelnumberi.travelplanner.ui.screen
 
 import android.content.Intent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -11,8 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.christianoabelnumberi.travelplanner.R
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -97,6 +100,17 @@ fun ResultScreen(
                 .padding(padding)
                 .padding(16.dp)
         ) {
+
+            // 🖼️ GAMBAR (WAJIB RUBRIK)
+            Image(
+                painter = painterResource(R.drawable.travel),
+                contentDescription = "Travel Image",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(180.dp)
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
 
             // CARD UTAMA
             Card(

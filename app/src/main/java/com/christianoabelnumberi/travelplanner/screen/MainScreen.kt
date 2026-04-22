@@ -1,7 +1,9 @@
 package com.christianoabelnumberi.travelplanner.ui.screen
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -20,13 +22,16 @@ fun MainScreen(navController: NavHostController) {
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Travel Planner") })
+            TopAppBar(
+                title = { Text("Travel Planner") }
+            )
         }
     ) { padding ->
 
         Column(
             modifier = Modifier
                 .padding(padding)
+                .verticalScroll(rememberScrollState())
                 .padding(16.dp)
         ) {
 
@@ -51,7 +56,10 @@ fun MainScreen(navController: NavHostController) {
             Spacer(modifier = Modifier.height(12.dp))
 
             // RADIO BUTTON
-            Text("Transportasi")
+            Text(
+                text = "Transportasi",
+                style = MaterialTheme.typography.titleMedium
+            )
 
             listOf("Mobil", "Motor", "Pesawat").forEach { item ->
                 Row(
@@ -61,11 +69,13 @@ fun MainScreen(navController: NavHostController) {
                             selected = (item == transport),
                             onClick = { transport = item }
                         )
+                        .padding(vertical = 4.dp)
                 ) {
                     RadioButton(
                         selected = (item == transport),
                         onClick = { transport = item }
                     )
+                    Spacer(modifier = Modifier.width(8.dp))
                     Text(text = item)
                 }
             }
@@ -89,7 +99,6 @@ fun MainScreen(navController: NavHostController) {
                         error = "Semua field harus diisi!"
                     } else {
                         error = ""
-
 
                         navController.navigate(
                             Screen.Main.createRoute(

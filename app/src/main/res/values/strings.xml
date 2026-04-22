@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Travel Planner</string>
+    <string name="title">Travel Planner</string>
+    <string name="tujuan">Destination</string>
+    <string name="budget">Budget</string>
+    <string name="transport">Transport</string>
+    <string name="process">Process</string>
+    <string name="error">All fields must be filled!</string>
 </resources>

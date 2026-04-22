@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Travel Planner</string>
+    <string name="title">Travel Planner</string>
+    <string name="tujuan">Tujuan</string>
+    <string name="budget">Budget</string>
+    <string name="transport">Transportasi</string>
+    <string name="process">Proses</string>
+    <string name="error">Semua field harus diisi!</string>
+</resources>
